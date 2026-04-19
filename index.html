@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">SkyCast</span>
+        </a>
+        <div class="topbar-links">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle dark / light mode">🌙</button>
+          <a class="topbar-link is-active" href="./index.html">Dashboard</a>
+          <span id="nav-anon">
+            <a class="topbar-link" href="./login.html">Log in</a>
+            <a class="topbar-link topbar-cta" href="./signup.html">Sign up</a>
+          </span>
+          <span id="nav-authenticated" hidden>
+            <span class="topbar-pill" aria-label="Signed in user" title="Signed in">
+              <span class="topbar-pill-label">Signed in</span>
+              <span class="topbar-pill-user" id="nav-user">Account</span>
+            </span>
+            <button class="btn btn-ghost" id="logout-btn" type="button">Log out</button>
+          </span>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <div class="hero-top">
+          <span class="hero-icon sun-icon" aria-hidden="true"></span>
+          <h1>SkyCast Weather</h1>
+          <span class="hero-icon cloud-icon" aria-hidden="true"></span>
+        </div>
+        <p>Search any city and view live weather details with a clean 5-day trend.</p>
+      </header>
+
+      <section class="search-panel">
+        <form id="search-form">
+          <label for="city-input">City name</label>
+          <div class="input-row">
+            <input
+              id="city-input"
+              type="text"
+              placeholder="e.g. London, Mumbai, Tokyo"
+              autocomplete="off"
+              required
+            />
+            <button class="btn" type="submit">Get Weather</button>
+            <button class="btn btn-secondary" id="location-btn" type="button">Use My Location</button>
+            <button class="unit-toggle" id="unit-toggle" type="button" title="Switch temperature unit">°F</button>
+          </div>
+        </form>
+        <p class="hint">Quick picks:</p>
+        <div class="city-buttons">
+          <button class="city-btn" data-city="London" type="button">London</button>
+          <button class="city-btn" data-city="New York" type="button">New York</button>
+          <button class="city-btn" data-city="Mumbai" type="button">Mumbai</button>
+          <button class="city-btn" data-city="Tokyo" type="button">Tokyo</button>
+          <button class="city-btn" data-city="Sydney" type="button">Sydney</button>
+        </div>
+      </section>
+
+      <section id="status" class="status" aria-live="polite"></section>
+      <section id="weather-grid" class="weather-grid"></section>
+      <section class="favorites-panel">
+        <div class="favorites-header">
+          <h2>Favorite Cities</h2>
+          <button class="btn btn-ghost" id="refresh-favorites-btn" type="button">
+            Refresh Favorites
+          </button>
+        </div>
+        <div id="favorites-list" class="favorites-list"></div>
+      </section>
+    </main>
+
+    <script src="supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth-client.js"></script>
+    <script src="auth-guard.js"></script>
+    <script src="auth-ui.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

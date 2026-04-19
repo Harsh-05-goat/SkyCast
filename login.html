@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in • SkyCast</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">SkyCast</span>
+        </a>
+        <div class="topbar-links">
+          <a class="topbar-link" href="./index.html">Dashboard</a>
+          <a class="topbar-link is-active" href="./login.html">Log in</a>
+          <a class="topbar-link topbar-cta" href="./signup.html">Sign up</a>
+        </div>
+      </nav>
+
+      <section class="auth-shell">
+        <div class="auth-card">
+          <h1 class="auth-title">Welcome back</h1>
+          <p class="auth-subtitle">Log in to save favorite cities and sync across devices.</p>
+
+          <form class="auth-form" action="#" method="post">
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input
+                id="login-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="login-password">Password</label>
+              <input
+                id="login-password"
+                name="password"
+                type="password"
+                placeholder="Your password"
+                autocomplete="current-password"
+                minlength="8"
+                required
+              />
+            </div>
+
+            <p id="auth-status" class="status" aria-live="polite"></p>
+
+            <div class="help-row">
+              <label class="check">
+                <input type="checkbox" name="remember" />
+                Remember me
+              </label>
+              <a class="link" href="./signup.html">Need an account?</a>
+            </div>
+
+            <div class="auth-actions">
+              <button class="btn" type="submit">Log in</button>
+              <a class="topbar-link" href="./index.html" style="text-align: center">Back to dashboard</a>
+            </div>
+          </form>
+
+          <p class="muted-note">Tip: After logging in, you’ll be redirected to the dashboard.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth-client.js"></script>
+    <script src="auth-ui.js"></script>
+    <script src="auth-pages.js"></script>
+  </body>
+</html>

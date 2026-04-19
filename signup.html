@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up • SkyCast</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">SkyCast</span>
+        </a>
+        <div class="topbar-links">
+          <a class="topbar-link" href="./index.html">Dashboard</a>
+          <a class="topbar-link" href="./login.html">Log in</a>
+          <a class="topbar-link topbar-cta is-active" href="./signup.html">Sign up</a>
+        </div>
+      </nav>
+
+      <section class="auth-shell">
+        <div class="auth-card">
+          <h1 class="auth-title">Create your account</h1>
+          <p class="auth-subtitle">Sign up to save favorites and personalize your weather dashboard.</p>
+
+          <form class="auth-form" action="#" method="post">
+            <div class="field-row">
+              <div class="field">
+                <label for="signup-first">First name</label>
+                <input id="signup-first" name="first_name" type="text" autocomplete="given-name" />
+              </div>
+              <div class="field">
+                <label for="signup-last">Last name</label>
+                <input id="signup-last" name="last_name" type="text" autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="signup-email">Email</label>
+              <input
+                id="signup-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="signup-password">Password</label>
+              <input
+                id="signup-password"
+                name="password"
+                type="password"
+                placeholder="At least 8 characters"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="terms" required />
+                I agree to the <a class="link" href="#" onclick="return false;">Terms</a>
+              </label>
+            </div>
+
+            <p id="auth-status" class="status" aria-live="polite"></p>
+
+            <div class="auth-actions">
+              <button class="btn" type="submit">Create account</button>
+              <a class="topbar-link" href="./login.html" style="text-align: center">Already have an account?</a>
+            </div>
+          </form>
+
+          <p class="muted-note">
+            If email confirmations are enabled in Supabase, you may need to confirm your email before
+            logging in.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth-client.js"></script>
+    <script src="auth-ui.js"></script>
+    <script src="auth-pages.js"></script>
+  </body>
+</html>
